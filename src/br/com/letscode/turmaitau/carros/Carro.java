@@ -53,7 +53,9 @@ public class Carro {
         sb.append(", velocidade=").append(velocidade);
         sb.append('}');
         return sb.toString();
+
     }
+
 
     /*
         hashCode => representacao do estado do objeto em hash

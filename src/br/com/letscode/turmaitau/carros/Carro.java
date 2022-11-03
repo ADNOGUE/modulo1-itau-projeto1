@@ -9,26 +9,62 @@ import java.util.Objects;
 public class Carro {
 
     //atributos
-    String marca = null;
-    String modelo;
-    String placa;
-    String cor;
+
+    /*
+
+    public
+    private  - só a propria classe altera os atributos, é o mais retristo
+    protected - é usado quando trabalhamos com herança,
+    default - permite dentro do pacote
+     */
+
+
+    private String marca;
+    private String modelo;
+    private String placa;
+    private String cor;
     //se uso a classe Integer (classe wrapper de in) a inicializacao é sempre NULL
-    Integer anoFabricacao = null;
+    private Integer anoFabricacao = null;
 
     //se uso o primitivo a inicializacao é sempre "= false", é mesma coisa que "boolean ligado = false;"
     boolean ligado;
 
     //se uso o primitivo a inicializacao é sempre "= 0", é mesma coisa que "int velocidade = 0;"
-    int velocidade;
+    private int velocidade;
+
+    public  Carro() {
+
+    }
+
+    public  Carro(String marca, String modelo, String placa, String Cor, Integer anoFabricacao){
+        this.setMarca(marca);
+        this.setModelo(modelo);
+        this.setPlaca(placa);
+        this.setCor(cor);
+        this.setAnoFabricacao(anoFabricacao);
+
+    }
+
+    public  Carro(String marca, String modelo, String Cor, Integer anoFabricacao){
+        this(marca, modelo, "", cor, anoFabricacao);
+     //quando vc cria um construtor pode reutilizar o outro
+    }
 
     //metodo
     void ligar() {
-        this.ligado = true;
+        if (!ligado){
+         this.velocidade = 0;
+         this.ligado = true;
+        }
+
     }
 
-    void acelerar() {
+    private void acelerar() {
         this.velocidade = this.velocidade + 10;
+    }
+
+    private void desligar(){
+        this.ligado = false;
     }
 
     void imprimirToString() {
@@ -76,4 +112,47 @@ public class Carro {
         return Objects.equals(marca, carro.marca) && Objects.equals(modelo, carro.modelo) && Objects.equals(placa, carro.placa) && Objects.equals(cor, carro.cor) && Objects.equals(anoFabricacao, carro.anoFabricacao);
     }
 
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        if (cor == null){
+            cor = "";
+        }
+        this.cor = cor;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        if (placa != null && (placa.length() == 7)){
+        this.placa = placa;}
+    }
+
+    public Integer getAnoFabricacao() {
+        return anoFabricacao;
+    }
+
+    public void setAnoFabricacao(Integer anoFabricacao) {
+        this.anoFabricacao = anoFabricacao;
+    }
 }

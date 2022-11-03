@@ -7,12 +7,12 @@ public class CarroMain2 {
     public static void main(String[] args) {
 
         Carro golBranco = new Carro();
-        golBranco.modelo = new String("Gol");
+        golBranco.setModelo(new String("Gol"));
         //se incluir a cor os objetos ficam diferentes
         //golBranco.cor = "Branco";
 
         Carro golPreto = new Carro();
-        golPreto.modelo = "Gol";
+        golPreto.setModelo("Gol");
         //se incluir a cor os objetos ficam diferentes
         //golPreto.cor = "Preto";
 

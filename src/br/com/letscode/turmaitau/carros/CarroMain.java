@@ -6,33 +6,53 @@ public class CarroMain {
 
     public static void main(String[] args) {
 
+        Carro audi = new  Carro(
+                "Audi",
+                "A1",
+                "XYZ12345",
+                "Branco",
+                "2020"
+        )
+
+        Carro nissan = new Carro(
+                "Nissan",
+                "March",
+                "ABC12345",
+                 "Branco",
+                 "2020"
+        )
+
+
+
+
         //criacao do objeto carro audi
-        Carro audi = new Carro();
-        audi.modelo = "A1";
-        audi.marca = "Audi";
-        audi.cor = "Branco";
-        audi.anoFabricacao = 2020;
-        audi.placa = "XYZ12345";
+ //       Carro audi = new Carro();
+//        audi.setModelo("A1");
+//        audi.setMarca("Audi");
+//        audi.setCor("Branco");
+//        audi.setAnoFabricacao(2020);
+//        audi.setPlaca("XYZ12345");
         //acelerando o carro audi
+        audi.ligar();
         audi.acelerar();
 
         //criacao do objeto carro nissao
-        Carro nissan = new Carro();
-        nissan.modelo = "March";
-        nissan.marca = "Nissan";
-        nissan.cor = "Branco";
-        nissan.anoFabricacao = 2020;
-        nissan.placa = "ABC12345";
+ //       Carro nissan = new Carro();
+ //       nissan.setModelo("March");
+//        nissan.setMarca("Nissan");
+ //       nissan.setCor("Branco");
+ //       nissan.setAnoFabricacao(2020);
+//        nissan.setPlaca("ABC12345");
         //acelerando o carro nissan
-        nissan.acelerar();
-        nissan.acelerar();
+//        nissan.acelerar();
+  //      nissan.acelerar();
 
         System.out.println("audi = " + audi.toString());
         System.out.println("nissan = " + nissan);
 
         //mudando o modelo, ou seja, mudando o estado do meu objeto
-        audi.modelo = "A2";
-        nissan.modelo = "Versa";
+        audi.setModelo("A2");
+        nissan.setModelo( "Versa");
 
         System.out.println("audi = " + audi);
         System.out.println("nissan = " + nissan);
@@ -40,10 +60,10 @@ public class CarroMain {
         System.out.println( "audi = nissan? " + nissan.equals(audi) );
 
         Carro golBranco = new Carro();
-        golBranco.modelo = new String("Gol");
+        golBranco.setModelo(new String("Gol"));
 
         Carro golPreto = new Carro();
-        golPreto.modelo = "Gol";
+        golPreto.setModelo("Gol");
 
         System.out.println( "modelo golBranco = golPreto? " + (golPreto.equals(golBranco) ));
 
